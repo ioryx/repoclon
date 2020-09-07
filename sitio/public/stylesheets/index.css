@@ -1,0 +1,162 @@
+@import "general.css";
+@import "header.css";
+@import "footer.css";
+
+.carousel{
+    margin-top: 20px;
+    display: none;
+}
+
+.productos{
+    display: flex;
+    flex-wrap: wrap;
+    text-align: center;
+    background-color: var(--color-grisClaro);
+    align-items: center;
+    justify-content: center;
+}
+.note{
+margin: 20px 0;
+background-color: var(--color-blanco);
+border-radius: 5px;
+}
+
+.productos img{
+    width:90%;
+    margin-top: 10px;
+}
+
+article h2{
+    color: var(--color-amarillo);
+}
+
+article p{
+    color: var(--color-grisClaro);
+}
+
+article h3{
+    color: var(--color-amarillo);
+}
+
+.tarjetas{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin-top: 20px;
+}
+
+.card{
+    margin: 10px 0;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-around;
+    padding: 0px 5px;
+}
+.caja{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.card img{
+    height: 100px;
+}
+
+.card-body{
+    margin-left: 10px;
+    padding: 0;
+}
+
+.card-title{
+    margin: 5px 0;
+    padding: 0;
+}
+
+.card-text{
+    margin: 0;
+    padding: 0;
+    font-size: 12px;
+}
+
+.locacion{
+    display: none;
+    border: 2px solid snow;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.text{
+    background-image: url("/images/fondo4.jpg");
+    background-size: 140%;
+    opacity: 0.95;
+    margin: 0;
+    padding: 0;
+}
+.text div{
+    margin: 10px 0;
+    padding: 0;
+}
+
+.text h3{
+color: var(--color-amarillo);
+font-weight: bold;
+margin-left: 5px;
+}
+
+.text h5{
+    font-weight: bold;
+    margin-left: 5px;
+    }
+
+.text p{
+    font-weight: bold;
+    margin: 0;
+    padding: 0;
+    margin-left: 5px;
+}
+
+.mapa{
+    padding: 0;
+}
+
+.mapa img{
+    width: 100%;
+    height: 100%;
+    border-left: 3px solid var(--color-amarillo);
+}
+
+.footer{
+    margin-top: 20px;
+}
+@media(min-width:768px) {
+    /*header form input {
+        width: 92%;
+    }*/
+
+    .carousel{
+        display: block;
+    }
+
+    .carousel img{
+        height: 450px;
+    }
+
+    .productos{
+        display: none;
+    }
+
+    .locacion{
+        display: block;
+    }
+}
+@media(min-width:1024px) {
+    .text h5{
+        margin-bottom: 30px;
+        }
+    
+    .text div{
+        margin: 20px 0;
+    }
+
+}

@@ -1,0 +1,63 @@
+<%- include("./partials/head.ejs") %>
+    <%- include("./partials/header.ejs") %>
+        <!--copie lo mismo q en registro de usuario-->
+        <% if (typeof errors != 'undefined') { %>
+            <p style="color:red">ERROR</p>
+            <ul>
+                <% for (let i = 0; i <errors.length; i++) {%>
+                    <li>
+                        <%=errors[i].msg%>
+                    </li>
+
+                    <% } %>
+            </ul>
+            <% } %>
+                <!--luego se va a userController-->
+                <div class="container">
+                    <div class="row fondo">
+                        <div class="titulo col-12">
+                            <h2>
+                                <%- title %>
+                            </h2>
+                        </div>
+                        <div class="col-12 col-md-6 ladoA">
+                            <div class=" logo col-12 col-md-5 col-lg-6 col-xl-5 d-flex justify-content-center">
+                                <figure>
+                                    <img src="/images/logo.png" alt="logo">
+                                </figure>
+                            </div>
+                            <h3>Registrate para tener descuentos exclusivos</h3>
+                        </div>
+                        <div class="col-12 col-md-6 col-xl-5 d-flex flex-column justify-content-center ladoB">
+                            <figure>
+                                <img src="/images/login.png" alt="login">
+                            </figure>
+                            <form action="/users/login" method="POST">
+                                <!--agregue metodo post julian fijate si puse bien la ruta por
+                favor no entiendo mucho-->
+                                <div class="form-group">
+                                    <label for="">Usuario</label>
+                                    <!--input para que viaje-->
+                                    <input type="text" class="form-control" id="" placeholder="Ingrese su usuario " name="user">
+                                </div>
+                                <div class="form-group">
+                                    <label for="">Contraseña</label>
+                                    <input type="password" class="form-control" id="" placeholder="Ingrese Contraseña" name="password">
+                                </div>
+                                <input type="submit" value="Login">
+                                <!--aca tenemos que hacer una nueva ruta en (user.js)-->
+                                <button class="col-12">Login</button>
+                                <div class="form-group form-check">
+                                    <input type="checkbox" class="form-check-input" id="exampleCheck1" name="recordar">
+                                    <label class="form-check-label" for="exampleCheck1">Recordarme</label>
+                                </div>
+                                <div>
+                                    <a class="col-12" href="http://localhost:3001/users/registrarme">Registrarme</a>
+                                    <a class="col-12" href="http://localhost:3001/users/login">Olvido su contraseña?</a>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+
+                <%- include("./partials/footer.ejs") %>

@@ -1,0 +1,21 @@
+@import "general.css";
+@import "header.css";
+@import "footer.css";
+
+.contact-box {
+  margin: auto auto;
+}
+
+.contact-box img {
+  margin-top: 40px;
+}
+
+.footer {
+  margin-top: 20px;
+}
+
+@media(min-width:768px) {
+  img {
+    width: 100%;
+  }
+}

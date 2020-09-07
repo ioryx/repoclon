@@ -1,0 +1,60 @@
+@import "general.css";
+@import "header.css";
+@import "footer.css";
+
+h2{
+    margin: 10px;
+}
+
+div{
+    margin-bottom: 10px;
+}
+
+.ladoA{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: left;
+    justify-content: left;
+    text-align: center;
+}
+
+.ladoA img{
+    width: 100%;
+}
+
+.ladoB{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+figure{
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.ladoB img{
+    width: 30%;
+    background-color: snow;
+    border-radius: 50%;
+    border: 5px solid var(--color-amarillo);
+}
+
+button{
+    margin-top: 20px;
+    margin-bottom: 20px;
+    color: snow;
+    background-color: var(--color-amarillo);
+}
+
+
+@media(min-width:768px) {
+    .ladoA img{
+        width: 250%;
+    }
+
+    .ladoA{
+        text-align: left;
+    }
+}

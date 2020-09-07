@@ -1,0 +1,178 @@
+@import "general.css";
+@import "header.css";
+@import "footer.css";
+
+/*
+- PRODUCTOS
+*/
+
+.productos {
+    display: flex;
+    flex-wrap: wrap;
+    padding-bottom: 40px;
+}
+
+.titulo h1 {
+    text-align: center;
+    font-size: 24px;
+    color: var(--color-blanco);
+    padding-top: 10px;
+}
+
+.contenido {
+    background-color: white;
+    margin-bottom: 30px;
+    border-radius: 5px;
+    padding: 2  px;
+    text-align: center;
+    color:var(--color-grisOscuro);
+}
+
+
+.contenido figure img {
+    width: 90%;
+    margin-top: 30px;
+}
+
+article {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 10px;
+    text-align: left;
+    align-items: center;
+}
+
+article h5{
+    text-align: left;
+    margin-left: 0px;
+    padding-left: 0px;
+}
+
+article .botones{
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    justify-items: stretch;
+}
+
+article .botones{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    text-align: center;
+}
+
+article button{
+    color:white;
+    font-weight: bold;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 10px;
+    padding: 10x;
+    margin-top: 20px;
+    border-radius: 5px;
+    border: none;
+    height: 70px;
+    text-align: center;
+}
+
+.cantidad {
+    margin-top: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: start;
+    align-items: center;
+}
+
+.cantidad h2 {
+    text-align: center;
+}
+
+.recomendaciones{
+    display: flex;
+    flex-wrap: wrap;
+    background-color: var(--color-rojo);
+    text-align: center;
+}
+
+.recomendaciones article{
+    background-color: white;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    border: none;
+    justify-content: center;
+    text-align: center;
+    color:var(--color-violeta);
+}
+
+.recomendaciones img{
+    width: 90%;
+    margin-top: 30px;
+    height: 100px;
+}
+
+
+/*
+FOOTER
+*/
+
+
+/* --- VERSION PARA TABLET --- */
+
+@media(min-width:768px) {
+    /*header form input {
+        width: 92%;
+    }*/
+
+    article h5{
+        font-size: 1.5rem;
+    }
+
+    article h1{
+        font-size: 2.8rem;
+    }
+
+}
+
+/* --- VERSION PARA ESCRITORIO --- */
+
+@media(min-width:1024px) {
+    section article h2 {
+        font-size: 1.7rem;
+    }
+    
+    .contenido{
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    figure{
+        border-right: 1px ridge black;
+        align-items: center;
+        text-align: center;
+    }
+
+    article{
+        margin-top: 20px;
+    }
+
+    article h3{
+        font-size: 1.5rem;
+        text-align: left;
+    }
+
+    article h2{
+        font-size: 3rem;
+        text-align: right;
+    }
+
+    article button{
+        margin-top: 0px;
+        padding: 20;    
+        margin-bottom: 100px;
+    }
+
+    .recomendaciones h3{
+        font-size: 2rem;
+    }
+}
