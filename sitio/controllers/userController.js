@@ -2,10 +2,10 @@ const bcrypt = require("bcrypt");
 const dbUser = require("../data/userDataBase");
 const dbProduct = require("../data/database");
 const fs = require("fs");
-const { validationResult } = require("express-validator");
+const { check, validationResult, body } = require("express-validator");
 
-module.exports = {
-
+/*module.exports = {*/
+let usersController = {
     registro: function(req, res, next) {
 
         res.render('registroUsuario', {
@@ -23,7 +23,7 @@ module.exports = {
         });
     },
     /*agrego processLogin */
-    processLogin: function(res, res) {
+    processLogin: function(req, res) {
         let errors = validationResult(req);
         if (errors.isEmpty()) {
             /*agregar si el usuario existe y la contraseña es correcta */
@@ -55,11 +55,18 @@ module.exports = {
             return res.render('login', { errors: errors.errors });
         }
     },
-    /*store:function(res, req){
+    store: function(req, res) {
         let errors = validationResult(req);
-        
-    }*/
-    /*agregue hasta aca cualquier cosa :) */
+        if (errors.isEmpty()) {
+            let usersJSON = fs.readFileSync('/data/user.json', { email });
+            let users;
+            if (usersJSON == "") {
+                user = [];
+            } else {
+                users = JSON.parse(usersJSON);
+            }
+        }
+    },
     crear: function(req, res, next) {
 
         let ultimoId = 0;
@@ -69,7 +76,6 @@ module.exports = {
             }
         });
         /*agrego variable userJSON si no sirve sacar :´´) */
-
         let usuario = {
             id: ultimoId + 1,
             nombre: req.body.nomnbre,
@@ -78,14 +84,20 @@ module.exports = {
             detalle: req.body.detalle,
             Localidad: req.body.localidad,
             email: req.body.email,
-            contraseña: bcrypt.hashSync(req.body.contraseña, 10), //encripto la contraseña
+            contraseña: bcrypt.hashSync(req.body.contraseña, 10),
             categoria: req.body.categoty,
             image: "",
-        }
+        };
 
         dbUser.push(usuario);
-        fs.writeFileSync("./data/users.json", JSON.stringify(dbUser))
-        res.redirect("/")
+        fs.writeFileSync("./data/users.json", JSON.stringify(dbUser));
+        res.redirect("/");
+    },
+    get crear() {
+        return this._crear;
+    },
+    set crear(value) {
+        this._crear = value;
     },
     productosAdmin: (req, res, next) => {
         let categorias = [];

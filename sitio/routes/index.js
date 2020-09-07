@@ -3,6 +3,7 @@ const router = express.Router();
 const controller = require("../controllers/indexController")
 
 router.get("/", controller.home) // utilizo el metodo listar de productsController
+    /* */
 router.get('/pruebaSession', function(req, res) {
     if (req.session.numeroVisitas == undefined) {
         req.session.numeroVisitas = 0;
